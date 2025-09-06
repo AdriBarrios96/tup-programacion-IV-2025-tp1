@@ -1,0 +1,34 @@
+@url = http://localhost:1234
+
+### POST
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Buscar pedido",
+    "completada": false
+}
+
+### POST
+POST {{url}}/tareas
+Content-Type: application/json
+
+{
+    "nombre": "Estuadiar para examen",
+    "completada": true
+}
+
+### GET
+GET {{url}}/tareas
+
+
+### GET - solo las tareas completadas
+GET http://localhost:1234/tareas?tarea=completadas
+
+### GET - solo las tareas sin completar
+GET http://localhost:1234/tareas?tarea=sin-completar
+
+# NOTA: me estuvo dando problemas el {{URL}}
+# nose si es por actualizacion o porque
+# la solucion mas rapida que encontre fue colocar directamente
+# el localhost completo.
